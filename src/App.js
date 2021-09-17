@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+
+import Banner from "./components/banner";
+import Cases from "./components/cases";
+import Header from "./components/header";
 
 function App() {
+  useEffect(() => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Banner />
+      <Cases />
     </div>
   );
 }

@@ -1,0 +1,50 @@
+.cases {
+  height: 50vh;
+  height: calc(var(--vh, 1vh) * 50);
+  .cases-navigation {
+    position: absolute;
+    display: flex;
+    bottom: 0px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 6;
+    padding: 32px;
+    box-sizing: border-box;
+    @include media("<=tablet") {
+      display: none;
+    }
+    .cases-arrow {
+      background-color: rgba(0, 0, 0, 0.4);
+      height: 72px;
+      width: 72px;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        color: $white;
+        height: 28px;
+        width: 28px;
+      }
+      &.disabled {
+        opacity: 0.3;
+      }
+    }
+  }
+  .row {
+    @include media("<=tablet") {
+      flex-direction: column;
+    }
+    .case {
+      .case-detail {
+        span {
+        }
+        h2 {
+        }
+      }
+      .case-img {
+      }
+    }
+  }
+}
