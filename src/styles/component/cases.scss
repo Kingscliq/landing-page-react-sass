@@ -11,7 +11,7 @@
     z-index: 6;
     padding: 32px;
     box-sizing: border-box;
-    @include media("<=tablet") {
+    @include media('<=tablet') {
       display: none;
     }
     .cases-arrow {
@@ -33,17 +33,79 @@
     }
   }
   .row {
-    @include media("<=tablet") {
+    @include media('<=tablet') {
       flex-direction: column;
     }
     .case {
-      .case-detail {
+      position: relative;
+      background-color: $black;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.4;
+      }
+      .case-details {
+        width: 33.333vw;
+        height: 50vh;
+        height: calc(var(--vh, 1vh) * 50);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 32px;
+        box-sizing: border-box;
+        z-index: 7;
+        position: relative;
+        @include media('<=tablet') {
+          width: 100vw;
+        }
+        @include media('<=phone') {
+          padding: 16px;
+        }
         span {
+          margin-top: 156px;
+          font-size: 1.6rem;
+          opacity: 0.8;
+          font-weight: 800;
+          color: $white;
+          @include media('<=desktop', '>tablet') {
+            font-size: 1.4rem;
+          }
+          @include media('<=phone') {
+            font-size: 1.2rem;
+            line-height: 2.2rem;
+          }
         }
         h2 {
+          font-size: 2.4rem;
+          line-height: 2.2rem;
+          margin-top: 16px;
+          color: $white;
+          width: 85%;
+          @include media('<=desktop', '>tablet') {
+            font-size: 2rem;
+            line-height: 2.4rem;
+            margin-top: 8px;
+          }
+          @include media('<=phone') {
+            font-size: 1.7rem;
+            line-height: 2.2rem;
+            margin-top: 8px;
+          }
         }
       }
       .case-img {
+        top: 0;
+        left: 0;
+        position: absolute;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        opacity: 0.65;
+        transition: 0.4s cubic-bezier(0.6, -0.5, 0.1, 0.99);
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
       }
     }
   }

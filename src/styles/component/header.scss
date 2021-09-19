@@ -1,10 +1,10 @@
 // @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700&display=swap");
 .header {
-  // position: fixed;
-  height: 128px;
+  position: fixed;
+  height: 60px;
   width: 100%;
   z-index: 4;
-  @include media("<=phone") {
+  @include media('<=phone') {
     height: 96px;
   }
   .logo {
@@ -18,7 +18,7 @@
   }
   .nav {
     width: 25px;
-    @include media("<=phone") {
+    @include media('<=phone') {
       width: 20px;
     }
     span {
